@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Matching</title>
+
+  <link rel="stylesheet" href="../global/global.css">
+  <link rel="stylesheet" href="./jobmatching.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <script src="../global/global.js" defer></script>
+  <script src="./jobmatching.js" defer></script>
+
+</head>
+
+<body>
+
+  <div id="container">
+
+    <nav id="sidebar">
+
+      <div id="sidebar-top">
+        <h2 id="logo">
+          AI Resume Analyzer
+        </h2>
+
+        <div id="close-btn">
+          ✕
+        </div>
+      </div>
+
+      <a href="../dashboard/dashboard.html" class="nav-link">Dashboard</a>
+
+      <a href="../resumeAnalyzer/resumeAnalyzer.html" class="nav-link">Resume Analyzer</a>
+
+      <a href="../jobMatching/jobmatching.html" class="nav-link">Job Matching</a>
+
+      <a href="../history/history.html" class="nav-link">Resume History</a>
+
+      <a href="../profile/profile.html" class="nav-link">Profile</a>
+
+      <a href="../login/login.html" class="nav-link">Login</a>
+
+    </nav>
+    <div id="overlay"></div>
+
+    <main>
+      <div id="topbar">
+
+        <div id="menu-btn">
+          ☰
+        </div>
+
+        <div id="profile">
+
+          <div id="profile-btn">
+
+            <i class="fa-solid fa-circle-user"></i>
+
+            <p>Profile</p>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+          </div>
+
+          <div id="profile-dropdown">
+
+            <a href="../profile/profile.html">
+
+              Profile
+
+            </a>
+
+            <a href="../login/login.html">
+
+              Logout
+
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <header class="jobmatching-header">
+
+        <h1>Job Matching</h1>
+
+        <p>
+          Find jobs that match your resume and skills.
+        </p>
+
+      </header>
+      <section class="recommended-jobs">
+
+        <h2>Recommended Jobs</h2>
+
+        <div class="job-cards">
+
+          <section class="job-card">
+
+            <h3>
+              Job Title:
+              <span class="job-title-value">--</span>
+            </h3>
+
+            <p>
+              Match:
+              <span class="job-match">--%</span>
+            </p>
+
+            <p>
+              Skills:
+              <span class="job-skills">--</span>
+            </p>
+
+            <p>
+              Company:
+              <span class="job-company">--</span>
+            </p>
+            <button>Apply →</button>
+
+          </section>
+
+          <section class="job-card">
+
+            <h3>
+              Job Title:
+              <span class="job-title-value">--</span>
+            </h3>
+
+            <p>
+              Match:
+              <span class="job-match">--%</span>
+            </p>
+
+            <p>
+              Skills:
+              <span class="job-skills">--</span>
+            </p>
+
+            <p>
+              Company:
+              <span class="job-company">--</span>
+            </p>
+
+            <button>Apply →</button>
+
+          </section>
+
+          <section class="job-card">
+
+            <h3>
+              Job Title:
+              <span class="job-title-value">--</span>
+            </h3>
+
+            <p>
+              Match:
+              <span class="job-match">--%</span>
+            </p>
+
+            <p>
+              Skills:
+              <span class="job-skills">--</span>
+            </p>
+
+            <p>
+              Company:
+              <span class="job-company">--</span>
+            </p>
+
+            <button>Apply →</button>
+
+          </section>
+
+          <section class="job-card">
+
+            <h3>
+              Job Title:
+              <span class="job-title-value">--</span>
+            </h3>
+
+            <p>
+              Match:
+              <span class="job-match">--%</span>
+            </p>
+
+            <p>
+              Skills:
+              <span class="job-skills">--</span>
+            </p>
+
+            <p>
+              Company:
+              <span class="job-company">--</span>
+            </p>
+
+            <button>Apply →</button>
+
+          </section>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>

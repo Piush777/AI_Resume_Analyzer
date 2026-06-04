@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+
+    <link rel="stylesheet" href="./resumeAnalyzer.css">
+    <link rel="stylesheet" href="../global/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="../global/global.js" defer></script>
+    <script src="./resumeAnalyzer.js" defer></script>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <nav id="sidebar">
+
+            <div id="sidebar-top">
+                <h2 id="logo">
+                    AI Resume Analyzer
+                </h2>
+
+                <div id="close-btn">
+                    ✕
+                </div>
+            </div>
+
+            <a href="../dashboard/dashboard.html" class="nav-link">Dashboard</a>
+
+            <a href="../resumeAnalyzer/resumeAnalyzer.html" class="nav-link">Resume Analyzer</a>
+
+            <a href="../jobMatching/jobmatching.html" class="nav-link">Job Matching</a>
+
+            <a href="../history/history.html" class="nav-link">Resume History</a>
+
+            <a href="../profile/profile.html" class="nav-link">Profile</a>
+
+            <a href="../login/login.html" class="nav-link">Login</a>
+
+        </nav>
+        <div id="overlay"></div>
+
+        <main>
+            <div id="topbar">
+
+                <div id="menu-btn">
+                    ☰
+                </div>
+
+                <div id="profile">
+
+                    <div id="profile-btn">
+
+                        <i class="fa-solid fa-circle-user"></i>
+
+                        <p>Profile</p>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                    <div id="profile-dropdown">
+
+                        <a href="../profile/profile.html">
+
+                            Profile
+
+                        </a>
+
+                        <a href="../login/login.html">
+
+                            Logout
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <header>
+                <h1>Resume Analyzer</h1>
+
+                <p>Upload your resume and get AI-powered insights.</p>
+            </header>
+
+            <section id="upload-section">
+
+                <div id="upload-content">
+
+                    <div id="upload-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+
+                    <div id="upload-text">
+
+                        <h2>Upload Resume (PDF)</h2>
+
+                        <p>Drag and drop your PDF file here</p>
+
+                    </div>
+
+                </div>
+
+                <div id="upload-actions">
+
+                    <div id="file-upload-container">
+
+                        <label for="resumeFile" id="file-label">
+
+                            Choose File
+
+                        </label>
+
+                        <span id="file-name">
+
+                            No file chosen
+
+                        </span>
+
+                        <input type="file" id="resumeFile" accept=".pdf">
+
+                    </div>
+
+                    <button id="analyzeBtn">
+
+                        Analyze Resume
+
+                    </button>
+
+                </div>
+            </section>
+
+            <div class="top-cards">
+                <section id="score">
+
+                    <h2>Score</h2>
+
+                    <div class="score-container">
+                        <div class="score-circle">
+
+                            0%
+
+                        </div>
+
+                        <div class="score-details">
+                            <h3>Resume Score</h3>
+                            <p>Waiting for resume analysis...</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="role">
+                    <h2>Suggested Role</h2>
+                    <h3>--</h3>
+                    <p>Upload a resume to predict role</p>
+
+                </section>
+            </div>
+
+            <section id="skills">
+
+                <h2>Skills</h2>
+
+                <div id="skill-container">
+                    <p>No skills detected yet</p>
+
+                    <p>Upload a resume to view skills</p>
+                </div>
+
+            </section>
+
+
+            <section id="suggestions">
+
+                <h2>Suggestions</h2>
+
+                <div id="suggestions-container">
+
+                    <p>No suggestions available yet</p>
+
+                    <p>Upload and analyze a resume to view recommendations</p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

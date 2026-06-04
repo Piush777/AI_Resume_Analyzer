@@ -1,0 +1,193 @@
+
+
+
+
+header{
+    margin-bottom:25px;
+    margin-top: 30px;
+}
+
+header h1{
+    margin-bottom:10px;
+}
+
+header p{
+    color:#555;
+}
+
+
+/* Cards */
+
+section{
+    margin-bottom:20px;
+    padding:20px;
+    background-color:white;
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    box-shadow:0px 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+section:hover{
+    transform:translateY(-3px);
+}
+
+section h2{
+    margin-bottom:10px;
+}
+
+
+/* Upload section */
+
+#resumeFile{
+    display:none;
+}
+
+#upload-actions{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-top:15px;
+}
+
+#file-upload-container{
+    display:flex;
+    align-items: center;
+    gap:20px;
+}
+
+#file-label{
+    padding:10px 20px;
+    background-color:#8b5cf6;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:500;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+#file-label:hover{
+    opacity:0.9;
+
+    transform:scale(1.05);
+}
+
+#file-name{
+    color:#666;
+}
+
+#upload-icon{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #f3f0ff;
+    color: #8b5cf6;
+    font-size: 28px;
+    margin-bottom: 20px;
+
+}
+
+#upload-content{
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:20px;
+}
+
+#upload-text p{
+    margin-top:10px;
+
+    color:#4b5563;
+}
+
+#upload-section{
+    border:2px dashed #d8b4fe;
+    padding: 35px 50px;
+}
+
+#upload-actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+
+/* Analyze Button */
+
+#analyzeBtn{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background-color:#8b5cf6;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#analyzeBtn:hover{
+    opacity:0.9;
+
+    transform:scale(1.05);
+}
+
+/* Score */
+.score-container{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.score-circle{
+    width: 120px;
+    height: 120px;
+    border: 8px solid #e5e7eb;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    font-weight: bold;
+    color: #8b5cf6;
+    background-color: white;
+}
+
+.top-cards{
+    display: flex;
+    gap: 20px;
+}
+.top-cards section{
+    flex:1;
+    min-height: 240px;
+}
+
+
+/* Empty-state text color */
+#skills p,
+#role p,
+#suggestions p,
+.score-details p{
+    color:#4b5563;
+
+    line-height:1.6;
+}
+
+#role h3{
+    color:#1f2937;
+}

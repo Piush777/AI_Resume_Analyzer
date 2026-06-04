@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="../global/global.css">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="./login.js" defer></script>
+
+</head>
+
+<body>
+    <main id="auth-container">
+
+        <div class="auth-left">
+            <h1>AI Resume Analyzer</h1>
+
+            <p>Analyze resumes, improve ATS score,
+                and discover better job opportunities.</p>
+        </div>
+
+        <div class="auth-right">
+            <h2>Welcome Back!</h2>
+
+            <p>Login to continue using the platform.</p>
+
+            <div class="form-container">
+
+                <form class="login-form">
+
+                    <div class="field">
+
+                        <label for="user-email">
+
+                            Email
+
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input type="email" id="user-email" name="email" placeholder="Enter your email">
+
+                        </div>
+
+                    </div>
+
+                    <div class="field">
+
+                        <label for="user-password">
+
+                            Password
+
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input type="password" id="user-password" name="password" placeholder="Enter your password">
+
+                            <i class="fa-regular fa-eye eye-icon"></i>
+
+                        </div>
+
+                        <div class="forgot-password">
+
+                            <a href="#">
+
+                                Forgot Password?
+
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-btn">Login</button>
+
+                </form>
+
+                <div class="divider">
+
+                    <div class="line"></div>
+
+                    <span>or continue with</span>
+
+                    <div class="line"></div>
+
+                </div>
+
+                <button class="google-btn">
+
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo">
+
+                    Continue with Google
+
+                </button>
+
+                <p class="signup-text">
+
+                    Don't have an account?
+
+                    <a href="../signup/signup.html">
+
+                        Sign Up
+
+                    </a>
+
+                </p>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

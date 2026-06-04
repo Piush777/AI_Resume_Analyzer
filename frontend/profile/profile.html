@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Profile
+    </title>
+
+    <link rel="stylesheet" href="../global/global.css">
+
+    <link rel="stylesheet" href="./profile.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="../global/global.js" defer></script>
+
+    <script src="./profile.js" defer></script>
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        <nav id="sidebar">
+
+            <div id="sidebar-top">
+
+                <h2 id="logo">
+
+                    AI Resume Analyzer
+
+                </h2>
+
+                <div id="close-btn">
+
+                    ✕
+
+                </div>
+
+            </div>
+
+            <a href="../dashboard/dashboard.html" class="nav-link">Dashboard</a>
+
+            <a href="../resumeAnalyzer/resumeAnalyzer.html" class="nav-link">Resume Analyzer</a>
+
+            <a href="../jobMatching/jobmatching.html" class="nav-link">Job Matching</a>
+
+            <a href="../history/history.html" class="nav-link">Resume History</a>
+
+            <a href="../profile/profile.html" class="nav-link">Profile</a>
+
+            <a href="../login/login.html" class="nav-link">Login</a>
+
+        </nav>
+
+        <div id="overlay"></div>
+
+        <main>
+
+            <div id="topbar">
+
+                <div id="menu-btn">
+
+                    ☰
+
+                </div>
+
+                <div id="profile">
+
+                    <div id="profile-btn">
+
+                        <i class="fa-solid fa-circle-user"></i>
+
+                        <p>Profile</p>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                    <div id="profile-dropdown">
+
+                        <a href="../profile/profile.html">
+
+                            Profile
+
+                        </a>
+
+                        <a href="../login/login.html">
+
+                            Logout
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <header class="profile-header">
+
+                <h1>
+
+                    Profile
+
+                </h1>
+
+                <p>
+
+                    Manage your account information
+
+                </p>
+
+            </header>
+
+
+            <div class="profile-image">
+
+                <i class="fa-solid fa-circle-user" id="default-icon"></i>
+
+                <img id="profile-preview" alt="Profile Image">
+
+                <input type="file" id="profile-upload" accept="image/*" hidden>
+
+                <button type="button" class="photo-btn">
+
+                    Change Photo
+
+                </button>
+
+            </div>
+
+
+            <section class="profile-card">
+
+                <form class="profile-form">
+
+
+                    <div class="profile-fields">
+
+
+                        <div class="field">
+
+                            <label for="name">
+
+                                Name
+
+                            </label>
+
+                            <input type="text" id="name" class="profile-input" placeholder="Enter your name">
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="email">
+
+                                Email
+
+                            </label>
+
+                            <input type="email" id="email" class="profile-input" placeholder="Enter your email">
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="phone">
+
+                                Phone
+
+                            </label>
+
+                            <input type="text" id="phone" class="profile-input" placeholder="Enter your phone number">
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="location">
+
+                                Location
+
+                            </label>
+
+                            <input type="text" id="location" class="profile-input" placeholder="Enter your location">
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="linkedin">
+
+                                LinkedIn
+
+                            </label>
+
+                            <input type="text" id="linkedin" class="profile-input"
+                                placeholder="Enter LinkedIn profile link">
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="github">
+
+                                GitHub
+
+                            </label>
+
+                            <input type="text" id="github" class="profile-input"
+                                placeholder="Enter GitHub profile link">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-actions">
+
+                        <button type="submit" class="save-btn">
+
+                            Save Profile
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
