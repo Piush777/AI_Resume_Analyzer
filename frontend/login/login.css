@@ -403,6 +403,10 @@ body{
 
     }
 
+    .auth-right h2{
+        font-size: 30px;
+    }
+
 }
 
 @media (max-width:768px){
