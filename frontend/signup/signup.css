@@ -417,6 +417,10 @@ body{
 
     }
 
+    .auth-right h2{
+        font-size: 28px;
+    }
+
 }
 
 @media (max-width:768px){
