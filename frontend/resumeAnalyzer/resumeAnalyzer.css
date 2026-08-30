@@ -1,10 +1,10 @@
-
-
-
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 header{
     margin-bottom:25px;
-    margin-top: 30px;
+    margin-top:30px;
 }
 
 header h1{
@@ -16,15 +16,21 @@ header p{
 }
 
 
-/* Cards */
+/* =========================================================
+   GENERAL CARDS
+   ========================================================= */
 
 section{
     margin-bottom:20px;
     padding:20px;
+
     background-color:white;
+
     border:1px solid #e5e7eb;
     border-radius:10px;
+
     box-shadow:0px 4px 12px rgba(0,0,0,0.1);
+
     transition:0.3s;
 }
 
@@ -37,41 +43,282 @@ section h2{
 }
 
 
-/* Upload section */
+/* =========================================================
+   UPLOAD SECTION
+   ========================================================= */
 
 #resumeFile{
     display:none;
 }
 
-#upload-actions{
+#upload-section{
+    border:2px dashed #d8b4fe;
+
+    padding:20px 40px;
+}
+
+
+/* Main upload content */
+
+#upload-content{
     display:flex;
+
+    flex-direction:column;
 
     align-items:center;
 
-    justify-content:space-between;
+    justify-content:center;
 
-    margin-top:15px;
+    text-align:center;
+
+    gap:8px;
+
+    min-height:170px;
+
+    margin-bottom:10px;
 }
 
-#file-upload-container{
-    display:flex;
-    align-items: center;
-    gap:20px;
-}
 
-#file-label{
-    padding:10px 20px;
-    background-color:#8b5cf6;
-    color:white;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:14px;
-    font-weight:500;
+/* =========================================================
+   UPLOAD ICON
+   ========================================================= */
+
+#upload-icon{
+    width:70px;
+    height:70px;
 
     display:flex;
     justify-content:center;
     align-items:center;
+
+    border-radius:50%;
+
+    background-color:#f3f0ff;
+
+    color:#8b5cf6;
+
+    font-size:28px;
+}
+
+
+
+
+/* =========================================================
+   SELECTED PDF STATE
+   ========================================================= */
+
+/*
+   When a PDF is selected, JavaScript adds:
+
+   uploadSection.classList.add("file-selected");
+
+   This changes the cloud icon container into
+   a document preview container.
+*/
+
+#upload-section.file-selected #upload-icon{
+    width:150px;
+    height:185px;
+
+    min-height:185px;
+
+    background:#f7f5ff;
+
+    border:1px solid #ebe5ff;
+
+    border-radius:12px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    box-shadow:0 4px 12px rgba(139,92,246,0.08);
+}
+
+
+/* =========================================================
+   PDF CANVAS
+   ========================================================= */
+
+#pdf-canvas{
+    display:none;
+
+    width:125px;
+    height:165px;
+
+    background:white;
+
+    border-radius:4px;
+
+    box-shadow:0 3px 8px rgba(0,0,0,0.15);
+
+    object-fit:contain;
+}
+
+
+/* =========================================================
+   UPLOAD TEXT
+   ========================================================= */
+
+#upload-text p{
+    margin-top:10px;
+
+    color:#4b5563;
+}
+
+
+/* =========================================================
+   FILE NAME
+   ========================================================= */
+
+#file-name{
+    display:none;
+
+    margin-top:8px;
+
+    font-size:15px;
+
+    color:#4b5563;
+
+    text-align:center;
+
+    line-height:1.4;
+
+    max-width:300px;
+
+    overflow-wrap:anywhere;
+}
+
+
+/* =========================================================
+   FILE INFORMATION
+   ========================================================= */
+
+#file-info{
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:100px;
+
+    width:100%;
+
+    margin-top:8px;
+}
+
+.file-info-item{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+    text-align:center;
+}
+
+.file-info-item strong{
+    font-size:15px;
+
+    color:#1f2937;
+}
+
+.file-info-item span{
+    font-size:14px;
+
+    color:#6b7280;
+}
+
+
+/* =========================================================
+   UPLOAD ACTIONS
+   ========================================================= */
+
+#upload-actions{
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    margin-top:10px;
+}
+
+
+/* File upload area */
+
+#file-upload-container{
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:20px;
+}
+
+
+
+/* Folder icon + choose file */
+
+#file-select{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:4px;
+}
+
+#file-select > i{
+    width:30px;
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#f3ecff;
+
+    color:#8b5cf6;
+
+    border-radius:8px;
+
+    font-size:15px;
+}
+
+
+/* Choose File button */
+
+#file-label{
+    padding:10px 20px;
+
+    background-color:#8b5cf6;
+
+    color:white;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
     box-shadow:0px 4px 10px rgba(0,0,0,0.12);
+
     transition:0.3s;
 }
 
@@ -81,62 +328,24 @@ section h2{
     transform:scale(1.05);
 }
 
-#file-name{
-    color:#666;
-}
 
-#upload-icon{
-    width: 70px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #f3f0ff;
-    color: #8b5cf6;
-    font-size: 28px;
-    margin-bottom: 20px;
-
-}
-
-#upload-content{
-    display:flex;
-
-    align-items:center;
-
-    gap:20px;
-
-    margin-bottom:20px;
-}
-
-#upload-text p{
-    margin-top:10px;
-
-    color:#4b5563;
-}
-
-#upload-section{
-    border:2px dashed #d8b4fe;
-    padding: 35px 50px;
-}
-
-#upload-actions{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 25px;
-}
-
-
-/* Analyze Button */
+/* =========================================================
+   ANALYZE BUTTON
+   ========================================================= */
 
 #analyzeBtn{
     padding:10px 20px;
+
     border:none;
+
     border-radius:10px;
+
     background-color:#8b5cf6;
+
     color:white;
+
     cursor:pointer;
+
     transition:0.3s;
 }
 
@@ -146,48 +355,246 @@ section h2{
     transform:scale(1.05);
 }
 
-/* Score */
-.score-container{
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-.score-circle{
-    width: 120px;
-    height: 120px;
-    border: 8px solid #e5e7eb;
-    border-radius: 50%;
+#analyzeBtn:disabled{
+    opacity:0.7;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 30px;
-    font-weight: bold;
-    color: #8b5cf6;
-    background-color: white;
+    cursor:not-allowed;
 }
+
+
+/* =========================================================
+   TOP CARDS
+   ========================================================= */
 
 .top-cards{
-    display: flex;
-    gap: 20px;
+    display:flex;
+
+    gap:20px;
 }
+
 .top-cards section{
     flex:1;
-    min-height: 240px;
+
+    min-height:240px;
 }
 
 
-/* Empty-state text color */
-#skills p,
-#role p,
-#suggestions p,
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.section-title{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.section-title i{
+    width:42px;
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#f3ecff;
+
+    color:#8b5cf6;
+
+    border-radius:10px;
+
+    font-size:16px;
+}
+
+.section-title h2{
+    margin:0;
+}
+
+
+/* =========================================================
+   SCORE
+   ========================================================= */
+
+.score-container{
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+    margin-top:25px;
+
+    padding-left:5px;
+}
+
+.score-circle{
+    width:120px;
+    height:120px;
+
+    border:8px solid #e9e1ff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#8b5cf6;
+
+    background:#faf8ff;
+}
+
+.score-details h3{
+    font-size:1.25rem;
+
+    margin-bottom:6px;
+}
+
 .score-details p{
     color:#4b5563;
 
     line-height:1.6;
 }
 
-#role h3{
+
+/* =========================================================
+   SUGGESTED ROLE
+   ========================================================= */
+
+.role-empty{
+    min-height:160px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+}
+
+.role-empty > i{
+    font-size:38px;
+
+    color:#b9a1ff;
+
+    margin-bottom:12px;
+}
+
+.role-empty h3{
+    font-size:1.3rem;
+
+    margin-bottom:6px;
+
     color:#1f2937;
+}
+
+.role-empty p{
+    margin:0;
+
+    color:#4b5563;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+#skill-container.skills-empty{
+    min-height:140px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+}
+
+.skills-empty > i{
+    font-size:32px;
+
+    color:#b9a1ff;
+
+    margin-bottom:12px;
+}
+
+.skills-empty h3{
+    font-size:1.15rem;
+
+    margin-bottom:6px;
+}
+
+.skills-empty p{
+    margin:0;
+
+    color:#4b5563;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   SUGGESTIONS
+   ========================================================= */
+
+#suggestions-container.suggestions-empty{
+    min-height:140px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+}
+
+.suggestions-empty > i{
+    font-size:32px;
+
+    color:#b9a1ff;
+
+    margin-bottom:12px;
+}
+
+.suggestions-empty h3{
+    font-size:1.15rem;
+
+    margin-bottom:6px;
+}
+
+.suggestions-empty p{
+    margin:0;
+
+    color:#4b5563;
+
+    line-height:1.6;
+}
+
+#no-file{
+    display:block;
+    color:#666;
+    font-size:15px;
+    white-space:nowrap;
+    margin-bottom:10px;
 }
