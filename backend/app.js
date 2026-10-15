@@ -1,16 +1,8 @@
-const express = require('express')
-
-const router = require('./routes/analyzeRoutes')
+import express from 'express'
 
 const app = express();
 
-app.use(express.json())
-
-app.use(express.urlencoded({extended: true}));
-
-app.use(router)
-
-const PORT = 3000;
-app.listen(PORT, ()=>{
+const PORT = 3001;
+app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
 })

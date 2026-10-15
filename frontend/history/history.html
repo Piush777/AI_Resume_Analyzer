@@ -2,126 +2,203 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Matching</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../global/global.css">
-    <link rel="stylesheet" href="./history.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <title>Resume History | Career Assistant</title>
 
-    <script src="../global/global.js" defer></script>
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="../global/global.css">
 
+  <!-- History-specific CSS -->
+  <link rel="stylesheet" href="./history.css">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <!-- Shared JavaScript -->
+  <script src="../global/global.js" defer></script>
 </head>
 
 <body>
 
-    <div id="container">
+  <div id="container">
 
-        <nav id="sidebar">
+    <!-- =========================================
+         TOPBAR
+         ========================================= -->
 
-            <div id="sidebar-top">
-                <h2 id="logo">
-                    AI Resume Analyzer
-                </h2>
+    <header id="topbar">
 
-                <div id="close-btn">
-                    ✕
-                </div>
+      <!-- Hamburger button -->
+      <button
+        id="menu-btn"
+        type="button"
+        aria-label="Toggle sidebar"
+        aria-controls="sidebar"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Brand -->
+      <a href="../index.html" id="brand">
+
+        <span id="brand-icon">
+          <i class="fa-regular fa-file-lines"></i>
+        </span>
+
+        <span>Career Assistant</span>
+
+      </a>
+
+      <!-- Authentication actions -->
+      <div id="auth-actions">
+
+        <a href="../login/login.html" id="login-link">
+          Login
+        </a>
+
+        <a href="../signup/signup.html" id="signup-btn">
+          Sign up
+        </a>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================================
+         SIDEBAR
+         ========================================= -->
+
+    <aside id="sidebar-column">
+
+      <nav id="sidebar" aria-label="Main navigation">
+
+        <!-- Dashboard -->
+        <a
+          href="../index.html"
+          class="nav-link"
+          title="Dashboard"
+        >
+          <i class="fa-solid fa-house"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <!-- Resume Analyzer -->
+        <a
+          href="../resumeAnalyzer/resumeAnalyzer.html"
+          class="nav-link"
+          title="Resume Analyzer"
+        >
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Resume Analyzer</span>
+        </a>
+
+        <!-- Job Matching -->
+        <a
+          href="../jobMatching/jobmatching.html"
+          class="nav-link"
+          title="Job Matching"
+        >
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Job Matching</span>
+        </a>
+
+        <!-- Resume History -->
+        <a
+          href="./history.html"
+          class="nav-link active"
+          title="Resume History"
+          aria-current="page"
+        >
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Resume History</span>
+        </a>
+
+        <!-- Profile -->
+        <a
+          href="../profile/profile.html"
+          class="nav-link"
+          title="Profile"
+        >
+          <i class="fa-solid fa-user"></i>
+          <span>Profile</span>
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- =========================================
+         SIDEBAR OVERLAY
+         ========================================= -->
+
+    <div id="overlay"></div>
+
+
+    <!-- =========================================
+         MAIN APPLICATION LAYOUT
+         ========================================= -->
+
+    <div id="app-layout">
+
+      <main>
+
+        <!-- Page heading -->
+        <header class="history-header">
+
+          <h1>Resume History</h1>
+
+          <p>
+            View your previous resume analyses.
+          </p>
+
+        </header>
+
+
+        <!-- History section -->
+        <section class="history-list">
+
+          <div id="history-container">
+
+            <!-- Empty state -->
+            <div class="history-empty">
+
+              <div class="history-empty-icon">
+                <i class="fa-regular fa-file-lines"></i>
+              </div>
+
+              <h3>No resume history yet</h3>
+
+              <p>
+                Analyze your first resume to start building your history.
+              </p>
+
+              <a
+                href="../resumeAnalyzer/resumeAnalyzer.html"
+                class="history-empty-btn"
+              >
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Analyze Resume</span>
+              </a>
+
             </div>
 
-            <a href="../index.html" class="nav-link">Dashboard</a>
+          </div>
 
-            <a href="../resumeAnalyzer/resumeAnalyzer.html" class="nav-link">Resume Analyzer</a>
+        </section>
 
-            <a href="../jobMatching/jobmatching.html" class="nav-link">Job Matching</a>
-
-            <a href="../history/history.html" class="nav-link">Resume History</a>
-
-            <a href="../profile/profile.html" class="nav-link">Profile</a>
-
-            <a href="../login/login.html" class="nav-link">Login</a>
-
-        </nav>
-        <div id="overlay"></div>
-
-        <main>
-            <div id="topbar">
-
-                <div id="menu-btn">
-                    ☰
-                </div>
-
-                <div id="profile">
-
-                    <div id="profile-btn">
-
-                        <i class="fa-solid fa-circle-user"></i>
-
-                        <p>Profile</p>
-
-                        <i class="fa-solid fa-chevron-down"></i>
-
-                    </div>
-
-                    <div id="profile-dropdown">
-
-                        <a href="../profile/profile.html">
-
-                            Profile
-
-                        </a>
-
-                        <a href="../login/login.html">
-
-                            Logout
-
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <header class="history-header">
-
-                <h1>Resume History</h1>
-
-                <p>
-                    View your previous resume analyses
-                </p>
-
-            </header>
-
-            <section class="history-list">
-
-                <div id="history-container">
-
-                    <div class="history-empty">
-
-                        <div class="history-empty-icon">
-                            <i class="fa-regular fa-file-lines"></i>
-                        </div>
-
-                        <h3>No resume history yet</h3>
-
-                        <p>
-                            Analyze your first resume to start building your history.
-                        </p>
-
-                        <a href="../resumeAnalyzer/resumeAnalyzer.html" class="history-empty-btn">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            <span>Analyze Resume</span>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </section>
-        </main>
+      </main>
 
     </div>
+
+  </div>
 
 </body>
 

@@ -1,271 +1,249 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Resume Analyzer</title>
+    <title>Career Assistant | Dashboard</title>
 
     <link rel="stylesheet" href="./global/global.css">
     <link rel="stylesheet" href="./dashboard/dashboard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <script src="./global/global.js" defer></script>
     <script src="./dashboard/dashboard.js" defer></script>
-
 </head>
 
 <body>
 
     <div id="container">
 
-        <nav id="sidebar">
+        <!-- Shared Topbar -->
+        <header id="topbar">
 
-            <div id="sidebar-top">
-                <h2 id="logo">
-                    AI Resume Analyzer
-                </h2>
+            <button id="menu-btn" type="button" aria-label="Toggle sidebar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-                <div id="close-btn">
-                    ✕
-                </div>
+            <a href="./index.html" id="brand">
+                <span id="brand-icon">
+                    <i class="fa-regular fa-file-lines"></i>
+                </span>
+
+                <span>Career Assistant</span>
+            </a>
+
+            <div id="auth-actions">
+                <a href="./login/login.html" id="login-link">Login</a>
+                <a href="./login/login.html" id="signup-btn">Sign up</a>
             </div>
 
-            <a href="./index.html" class="nav-link">Dashboard</a>
-
-            <a href="resumeAnalyzer/resumeAnalyzer.html" class="nav-link">Resume Analyzer</a>
-
-            <a href="jobMatching/jobmatching.html" class="nav-link">Job Matching</a>
-
-            <a href="history/history.html" class="nav-link">Resume History</a>
-
-            <a href="profile/profile.html" class="nav-link">Profile</a>
-
-            <a href="login/login.html" class="nav-link">Login</a>
+        </header>
 
 
+        <!-- Shared Sidebar -->
+        <aside id="sidebar-column">
 
-        </nav>
+            <nav id="sidebar" aria-label="Main navigation">
+
+                <a href="./index.html" class="nav-link active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="./resumeAnalyzer/resumeAnalyzer.html" class="nav-link">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Resume Analyzer</span>
+                </a>
+
+                <a href="./jobMatching/jobmatching.html" class="nav-link">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Job Matching</span>
+                </a>
+
+                <a href="./history/history.html" class="nav-link">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Resume History</span>
+                </a>
+
+                <a href="./profile/profile.html" class="nav-link">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- Shared Overlay -->
         <div id="overlay"></div>
 
-        <main>
-            <div id="topbar">
 
-                <div id="menu-btn">
-                    ☰
-                </div>
+        <!-- Dashboard Content -->
+        <div id="app-layout">
 
-                <div id="profile">
+            <main>
 
-                    <div id="profile-btn">
+                <header class="dashboard-header">
 
-                        <i class="fa-solid fa-circle-user"></i>
+                    <div class="dashboard-header-left">
+                        <h1 id="greeting"></h1>
 
-                        <p>Profile</p>
-
-                        <i class="fa-solid fa-chevron-down"></i>
-
-                    </div>
-
-                    <div id="profile-dropdown">
-
-                        <a href="../profile/profile.html">
-
-                            Profile
-
-                        </a>
-
-                        <a href="../login/login.html">
-
-                            Logout
-
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <header class="dashboard-header">
-
-                <div class="dashboard-header-left">
-
-
-                    <h1 id="greeting"></h1>
-
-                    <p class="dashboard-subtitle">
-                        Here's your resume performance overview.
-                    </p>
-                </div>
-
-                <div class="dashboard-header-right">
-
-                    <button class="analyze-btn">
-
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-                        Analyze New Resume
-
-                    </button>
-
-                </div>
-
-            </header>
-
-            <div class="dashboard-cards">
-
-                <section class="dashboard-card">
-
-                    <div class="card-icon">
-                        <i class="fa-regular fa-file-lines"></i>
-                    </div>
-
-                    <div class="card-content">
-
-                        <h3>Total Resumes</h3>
-
-                        <div class="dashboard-value">
-                            0
-                        </div>
-
-                        <p>
-                            Start by uploading your first resume
+                        <p class="dashboard-subtitle">
+                            Here's your resume performance overview.
                         </p>
-
                     </div>
 
-                </section>
-
-
-                <section class="dashboard-card">
-
-                    <div class="card-icon">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-
-                    <div class="card-content">
-
-                        <h3>Average Score</h3>
-
-                        <div class="dashboard-value">
-                            --%
-                        </div>
-
-                        <p>
-                            Scores will appear after analysis
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-                <section class="dashboard-card">
-
-                    <div class="card-icon">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </div>
-
-                    <div class="card-content">
-
-                        <h3>Jobs Matched</h3>
-
-                        <div class="dashboard-value">
-                            0
-                        </div>
-
-                        <p>
-                            Matching jobs will appear here
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-                <section class="dashboard-card">
-
-                    <div class="card-icon">
-                        <i class="fa-solid fa-trophy"></i>
-                    </div>
-
-                    <div class="card-content">
-
-                        <h3>Top Score</h3>
-
-                        <div class="dashboard-value">
-                            --%
-                        </div>
-
-                        <p>
-                            Your highest resume score
-                        </p>
-
-                    </div>
-
-                </section>
-
-            </div>
-            <div class="dashboard-lower">
-
-                <section class="recent-activity">
-
-                    <div class="section-header">
-
-                        <h2>Recent Activity</h2>
-
-                        <button class="view-all-btn">
-                            View All
+                    <div class="dashboard-header-right">
+                        <button class="analyze-btn" type="button">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            Analyze New Resume
                         </button>
-
                     </div>
 
-                    <div class="activity-empty">
+                </header>
 
-                        <i class="fa-regular fa-clipboard"></i>
 
-                        <h3>No recent activity yet</h3>
+                <!-- Dashboard Summary Cards -->
+                <div class="dashboard-cards">
 
-                        <p>
-                            Upload your first resume to start seeing your activity here.
-                        </p>
+                    <section class="dashboard-card">
 
-                        <button class="upload-btn">
-                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                            <span>Upload Resume</span>
-                        </button>
+                        <div class="card-icon">
+                            <i class="fa-regular fa-file-lines"></i>
+                        </div>
 
-                    </div>
+                        <div class="card-content">
+                            <h3>Total Resumes</h3>
 
-                </section>
+                            <div class="dashboard-value">0</div>
 
-                <section class="analytics-card">
+                            <p>Start by uploading your first resume</p>
+                        </div>
 
-                    <div class="section-header">
+                    </section>
 
-                        <h2>Performance Analytics</h2>
 
-                    </div>
+                    <section class="dashboard-card">
 
-                    <div class="analytics-empty">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
 
-                        <i class="fa-solid fa-chart-line"></i>
+                        <div class="card-content">
+                            <h3>Average Score</h3>
 
-                        <h3>No analytics available yet</h3>
+                            <div class="dashboard-value">--%</div>
 
-                        <p>
-                            Analyze your first resume to view performance trends and statistics.
-                        </p>
+                            <p>Scores will appear after analysis</p>
+                        </div>
 
-                    </div>
+                    </section>
 
-                </section>
 
-            </div>
-        </main>
+                    <section class="dashboard-card">
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+
+                        <div class="card-content">
+                            <h3>Jobs Matched</h3>
+
+                            <div class="dashboard-value">0</div>
+
+                            <p>Matching jobs will appear here</p>
+                        </div>
+
+                    </section>
+
+
+                    <section class="dashboard-card">
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+
+                        <div class="card-content">
+                            <h3>Top Score</h3>
+
+                            <div class="dashboard-value">--%</div>
+
+                            <p>Your highest resume score</p>
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- Recent Activity and Analytics -->
+                <div class="dashboard-lower">
+
+                    <section class="recent-activity">
+
+                        <div class="section-header">
+                            <h2>Recent Activity</h2>
+
+                            <button class="view-all-btn" type="button">
+                                View All
+                            </button>
+                        </div>
+
+                        <div class="activity-empty">
+
+                            <i class="fa-regular fa-clipboard"></i>
+
+                            <h3>No recent activity yet</h3>
+
+                            <p>
+                                Upload your first resume to start seeing your
+                                activity here.
+                            </p>
+
+                            <button class="upload-btn" type="button">
+                                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                <span>Upload Resume</span>
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+                    <section class="analytics-card">
+
+                        <div class="section-header">
+                            <h2>Performance Analytics</h2>
+                        </div>
+
+                        <div class="analytics-empty">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            <h3>No analytics available yet</h3>
+
+                            <p>
+                                Analyze your first resume to view performance
+                                trends and statistics.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </main>
+
+        </div>
 
     </div>
 
 </body>
 
 </html>
+```

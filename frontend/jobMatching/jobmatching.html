@@ -4,123 +4,204 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Matching</title>
 
+  <title>Job Matching | Career Assistant</title>
+
+  <!-- Shared CSS -->
   <link rel="stylesheet" href="../global/global.css">
+
+  <!-- Job Matching CSS -->
   <link rel="stylesheet" href="./jobmatching.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <!-- Shared JavaScript -->
   <script src="../global/global.js" defer></script>
-  <script src="./jobmatching.js" defer></script>
 
+  <!-- Job Matching JavaScript -->
+  <script src="./jobmatching.js" defer></script>
 </head>
 
 <body>
 
   <div id="container">
 
-    <nav id="sidebar">
+    <!-- =========================================
+         TOPBAR
+         ========================================= -->
 
-      <div id="sidebar-top">
-        <h2 id="logo">
-          AI Resume Analyzer
-        </h2>
+    <header id="topbar">
 
-        <div id="close-btn">
-          ✕
-        </div>
+      <!-- Hamburger button -->
+      <button
+        id="menu-btn"
+        type="button"
+        aria-label="Toggle sidebar"
+        aria-controls="sidebar"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Brand -->
+      <a href="../index.html" id="brand">
+
+        <span id="brand-icon">
+          <i class="fa-regular fa-file-lines"></i>
+        </span>
+
+        <span>Career Assistant</span>
+
+      </a>
+
+      <!-- Authentication actions -->
+      <div id="auth-actions">
+
+        <a href="../login/login.html" id="login-link">
+          Login
+        </a>
+
+        <a href="../signup/signup.html" id="signup-btn">
+          Sign up
+        </a>
+
       </div>
 
-      <a href="../index.html" class="nav-link">Dashboard</a>
+    </header>
 
-      <a href="../resumeAnalyzer/resumeAnalyzer.html" class="nav-link">Resume Analyzer</a>
 
-      <a href="../jobMatching/jobmatching.html" class="nav-link">Job Matching</a>
+    <!-- =========================================
+         SIDEBAR
+         ========================================= -->
 
-      <a href="../history/history.html" class="nav-link">Resume History</a>
+    <aside id="sidebar-column">
 
-      <a href="../profile/profile.html" class="nav-link">Profile</a>
+      <nav id="sidebar" aria-label="Main navigation">
 
-      <a href="../login/login.html" class="nav-link">Login</a>
+        <!-- Dashboard -->
+        <a
+          href="../index.html"
+          class="nav-link"
+          title="Dashboard"
+        >
+          <i class="fa-solid fa-house"></i>
+          <span>Dashboard</span>
+        </a>
 
-    </nav>
+        <!-- Resume Analyzer -->
+        <a
+          href="../resumeAnalyzer/resumeAnalyzer.html"
+          class="nav-link"
+          title="Resume Analyzer"
+        >
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Resume Analyzer</span>
+        </a>
+
+        <!-- Job Matching -->
+        <a
+          href="./jobmatching.html"
+          class="nav-link active"
+          title="Job Matching"
+          aria-current="page"
+        >
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Job Matching</span>
+        </a>
+
+        <!-- Resume History -->
+        <a
+          href="../history/history.html"
+          class="nav-link"
+          title="Resume History"
+        >
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Resume History</span>
+        </a>
+
+        <!-- Profile -->
+        <a
+          href="../profile/profile.html"
+          class="nav-link"
+          title="Profile"
+        >
+          <i class="fa-solid fa-user"></i>
+          <span>Profile</span>
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- =========================================
+         SIDEBAR OVERLAY
+         ========================================= -->
+
     <div id="overlay"></div>
 
-    <main>
-      <div id="topbar">
 
-        <div id="menu-btn">
-          ☰
-        </div>
+    <!-- =========================================
+         MAIN APPLICATION LAYOUT
+         ========================================= -->
 
-        <div id="profile">
+    <div id="app-layout">
 
-          <div id="profile-btn">
+      <main>
 
-            <i class="fa-solid fa-circle-user"></i>
+        <!-- Page heading -->
+        <header class="jobmatching-header">
 
-            <p>Profile</p>
+          <h1>Job Matching</h1>
 
-            <i class="fa-solid fa-chevron-down"></i>
+          <p>
+            Find jobs that match your resume and skills.
+          </p>
 
-          </div>
+        </header>
 
-          <div id="profile-dropdown">
 
-            <a href="../profile/profile.html">
+        <!-- Recommended jobs section -->
+        <section id="recommended-jobs">
 
-              Profile
+          <h2>Recommended Jobs</h2>
 
-            </a>
+          <div id="job-container">
 
-            <a href="../login/login.html">
+            <!-- Empty state -->
+            <div class="jobs-empty">
 
-              Logout
+              <div class="jobs-empty-icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
 
-            </a>
+              <h3>No job matches yet</h3>
 
-          </div>
+              <p>
+                Analyze your resume to discover jobs that match your skills.
+              </p>
 
-        </div>
-      </div>
+              <a
+                href="../resumeAnalyzer/resumeAnalyzer.html"
+                class="jobs-empty-btn"
+              >
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Analyze Resume</span>
+              </a>
 
-      <header class="jobmatching-header">
-
-        <h1>Job Matching</h1>
-
-        <p>
-          Find jobs that match your resume and skills.
-        </p>
-
-      </header>
-      <section id="recommended-jobs">
-
-        <h2>Recommended Jobs</h2>
-
-        <div id="job-container">
-
-          <div class="jobs-empty">
-
-            <div class="jobs-empty-icon">
-              <i class="fa-solid fa-briefcase"></i>
             </div>
 
-            <h3>No job matches yet</h3>
-
-            <p>
-              Analyze your resume to discover jobs that match your skills.
-            </p>
-
-            <a href="../resumeAnalyzer/resumeAnalyzer.html" class="jobs-empty-btn">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-              <span>Analyze Resume</span>
-            </a>
           </div>
 
-        </div>
+        </section>
 
-      </section>
-    </main>
+      </main>
+
+    </div>
 
   </div>
 
